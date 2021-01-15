@@ -1,0 +1,30 @@
+---
+all:
+  children:
+    linux:
+      children:
+        splunk:
+          hosts:
+            beda-spl-sh01.mybeda.com:
+        docker:
+          hosts:
+            unifi.mybeda.com:
+        pihole:
+          hosts:
+            dns.mybeda.com:
+        vars:
+          ansible_user: pi
+        wazuh:
+          hosts:
+            wazuh1:
+              ansible_host: 10.1.12.53
+        xsoar:
+          hosts:
+            xsoar1:
+              ansible_host: 10.1.12.63
+        syslog:
+          hosts:
+            syslogng.mybeda.com:
+  vars:
+    ansible_user: centos
+    ansible_ssh_private_key_file: ~/.ssh/home.pem
