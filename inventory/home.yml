@@ -12,8 +12,6 @@ all:
         pihole:
           hosts:
             dns.mybeda.com:
-        vars:
-          ansible_user: pi
         wazuh:
           hosts:
             wazuh1:
@@ -25,6 +23,3 @@ all:
         syslog:
           hosts:
             syslogng.mybeda.com:
-  vars:
-    ansible_user: centos
-    ansible_ssh_private_key_file: ~/.ssh/home.pem

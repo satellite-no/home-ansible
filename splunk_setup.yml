@@ -1,0 +1,5 @@
+---
+- name: Playbook to setup Splunk
+  hosts: splunk
+  roles:
+    - splunk_common

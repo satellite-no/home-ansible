@@ -1,0 +1,8 @@
+---
+- name: Add Splunk user
+  user:
+    name: splunk
+    comment: Added by Ansible
+    state: present
+  become: yes
+  

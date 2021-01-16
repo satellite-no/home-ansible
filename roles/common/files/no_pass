@@ -1,0 +1,2 @@
+# Added by Ansible 
+%wheel ALL=(ALL) NOPASSWD: ALL

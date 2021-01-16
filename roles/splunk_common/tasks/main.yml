@@ -1,0 +1,3 @@
+---
+- name: Import create Splunk user
+  import_tasks: splunk_user.yml
