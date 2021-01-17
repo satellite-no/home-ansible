@@ -1,0 +1,25 @@
+---
+- name: Playbook get old apps.
+  hosts: all
+  gather_facts: no
+  become: yes
+  
+  tasks:
+  - name: Get the apps
+    synchronize: 
+      mode: pull
+      src: /opt/splunkforwarder/etc/apps/sean*
+      dest: apps
+    when: 
+    - "'splunk' not in group_names"
+
+  - name: Upload to splunk
+    synchronize: 
+      mode: push
+      src: apps
+      dest: /opt/splunk/etc/deployment-apps
+    when: 
+    - "'splunk' in group_names"
+    become: yes
+    become_user: splunk
+
