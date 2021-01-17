@@ -1,7 +1,7 @@
 ---
 - name: Add Splunk user
   user:
-    name: splunk
+    name: "{{ splunk.splunk_user }}"
     comment: Added by Ansible
     state: present
   become: yes
