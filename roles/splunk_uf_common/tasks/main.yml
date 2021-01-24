@@ -1,0 +1,5 @@
+---
+- name: Import Deploy poll
+  import_tasks: set_deploy_poll.yml
+  tags:
+  - set_deploy_poll

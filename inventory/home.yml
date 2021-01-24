@@ -12,6 +12,10 @@ all:
         pihole:
           hosts:
             dns.mybeda.com:
+        suricata:
+          hosts:
+            beda-pids-1.mybeda.com:
+              ansible_user: pi
         wazuh:
           hosts:
             wazuh1:
