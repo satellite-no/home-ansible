@@ -1,0 +1,6 @@
+---
+- name: Playbook to configure the Splunk UF
+  hosts: all
+
+  roles:
+    - splunk_uf_common

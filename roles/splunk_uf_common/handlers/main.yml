@@ -1,0 +1,6 @@
+---
+- name: restart splunk uf
+  become: yes
+  become_user: splunk
+  shell:
+    cmd: /opt/splunkforwarder/bin/splunk restart

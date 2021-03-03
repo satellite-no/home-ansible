@@ -1,0 +1,18 @@
+---
+- name: Create deployment app
+  become: yes
+  file:
+    path: /opt/splunkforwarder/etc/apps/sean_all_deploymentclient/local
+    state: directory
+    owner: splunk
+    group: splunk
+    recurse: yes
+  
+- name: Set deployment server
+  become: yes
+  ini_file:
+    path: /opt/splunkforwarder/etc/apps/sean_all_deploymentclient/local/deploymentclient.conf
+    section: target-broker:deploymentServer
+    option: targetUri
+    value: 10.1.10.109:8089
+  notify: restart splunk uf
