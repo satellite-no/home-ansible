@@ -1,3 +1,6 @@
 ---
+- name: import yum update tasks
+  include_tasks: yum-update.yml
+
 - name: import os user setup
-  import_tasks: setup_users.yml
+  include_tasks: setup_users.yml
