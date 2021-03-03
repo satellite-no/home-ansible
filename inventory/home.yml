@@ -23,3 +23,6 @@ all:
         syslog:
           hosts:
             syslogng.mybeda.com:
+        ansible:
+          hosts:
+            ansible.mybeda.com:
