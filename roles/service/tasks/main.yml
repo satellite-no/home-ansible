@@ -1,0 +1,4 @@
+---
+# roles/service/tasks/main.yml
+- name: Include {{ state }} task
+  include_tasks: "{{ state }}.yml" 

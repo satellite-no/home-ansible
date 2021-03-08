@@ -1,0 +1,15 @@
+---
+# roles/service/tasks/upgrade.yml
+- name: Yum upgrade all packages
+  yum:
+    name: '*'
+    state: latest
+  become: yes
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+
+- name: Apt upgrade all packages
+  apt:
+    name: '*'
+    state: latest
+  become: yes
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
