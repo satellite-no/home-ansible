@@ -1,7 +1,7 @@
 ---
 all:
   children:
-    linux:
+    centos:
       children:
         splunk:
           hosts:
@@ -12,10 +12,6 @@ all:
         pihole:
           hosts:
             dns.mybeda.com:
-        suricata:
-          hosts:
-            beda-pids-1.mybeda.com:
-              ansible_user: pi
         wazuh:
           hosts:
             wazuh1:
@@ -27,3 +23,13 @@ all:
         syslog:
           hosts:
             syslogng.mybeda.com:
+        sc4s:
+          hosts:
+            sc4s.mybeda.com:
+    debian:
+      children:
+        suricata:
+          hosts:
+            beda-pids-1.mybeda.com:
+              ansible_user: pi
+

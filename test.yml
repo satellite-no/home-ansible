@@ -1,8 +1,6 @@
 ---
 - name: Test Playbook
   hosts: all
-  tasks:  
-  - name: username
-    debug: 
-      msg: 
-      - User {{ ansible_user }}
+
+  roles:
+    - common
