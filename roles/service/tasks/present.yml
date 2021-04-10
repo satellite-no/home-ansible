@@ -1,0 +1,4 @@
+---
+# roles/service/tasks/main.yml
+- name: Validating services {{ packages }} are present
+  include_tasks: install.yml

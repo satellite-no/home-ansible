@@ -1,0 +1,11 @@
+---
+- name: Install packages or Upgrade packages
+  hosts: all
+
+  roles:
+    - role: service
+      vars:
+        state: upgrade
+    - role: service
+      vars:
+        state: install

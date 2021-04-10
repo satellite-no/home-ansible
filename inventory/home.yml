@@ -32,4 +32,3 @@ all:
           hosts:
             beda-pids-1.mybeda.com:
               ansible_user: pi
-
