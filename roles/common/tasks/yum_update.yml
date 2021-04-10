@@ -1,0 +1,12 @@
+---
+- name: Run yum update
+  become: yes
+  yum:
+    name: '*'
+    state: latest 
+
+- name: Install a list of packages required for all servers
+  become: yes
+  yum:
+    name: "{{ added_packages }}"
+    state: present
