@@ -1,0 +1,12 @@
+---
+- name: Show ansible facts
+  hosts: all
+  gather_facts: no
+
+  tasks:
+    - name: 'Get Installed apps fact'
+      ansible.builtin.setup:
+      become: yes
+    - name: 'Debug facts'
+      debug:
+        var: ansible_facts

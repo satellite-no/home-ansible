@@ -1,0 +1,12 @@
+---
+# tasks file for splunk_reload
+- name: 'Reload Splunk endpoints'
+  ansible.builtin.uri:
+    url: '{{ splunk_url }}/{{ item }}/_reload'
+    method: POST
+    user: '{{ splunk_admin_user }}'
+    password: '{{ splunk_admin_password }}'
+    force_basic_auth: true
+    validate_certs: false
+  loop: '{{ splunk_reload_endpoints }}'
+  register: reload_result

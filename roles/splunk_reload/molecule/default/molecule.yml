@@ -1,0 +1,17 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+platforms:
+  - name: instance
+    image: docker.io/mybeda/splunkdockersimple:latest
+    pre_build_image: true
+provisioner:
+  lint: |
+    set -e
+    yamllint .
+    ansible-lint
+  name: ansible
+verifier:
+  name: ansible

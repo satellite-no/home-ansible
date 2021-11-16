@@ -1,0 +1,14 @@
+galaxy_info:
+  author: Sean Elliott
+  description: Role to reload the splunk conf files after changes
+  company: home
+  role_name: splunk_reload
+  namespace: splunk_reload
+
+  license: license (GPL-2.0-or-later, MIT, etc)
+
+  min_ansible_version: 2.9
+
+  galaxy_tags: [splunk]
+
+dependencies: []

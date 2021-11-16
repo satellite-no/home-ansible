@@ -1,0 +1,36 @@
+#!/usr/bin/python3
+
+import os
+import json
+import configparser
+
+def find_apps(splunk_home):
+    found_apps = os.listdir(splunk_home)
+    return found_apps
+
+def read_app_data(apps):
+    config = configparser.ConfigParser()
+    installed_apps = {}
+
+    for app in apps:
+        config.read('/opt/splunk/etc/apps/{}/default/app.conf'.format(app))
+
+        if 'launcher' in config:
+            app_version = config['launcher']['version']
+            installed_apps[app] = app_version
+
+    return installed_apps
+
+def render_data(data):
+    return json.dumps(data)
+
+def main():
+    splunk_home = '/opt/splunk/etc/apps'
+
+    apps_list = find_apps(splunk_home)
+    installed_apps = read_app_data(apps_list)
+
+    print(render_data(installed_apps))
+
+if __name__ == "__main__":
+    main()
