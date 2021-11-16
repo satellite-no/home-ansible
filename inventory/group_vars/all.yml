@@ -1,6 +1,6 @@
 ---
-ansible_user: centos
-ansible_ssh_private_key_file: ~/.ssh/home.pem
+#ansible_user: centos
+#ansible_ssh_private_key_file: ~/.ssh/home.pem
 packages:
   - net-tools
   - nc

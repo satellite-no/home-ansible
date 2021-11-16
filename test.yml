@@ -1,6 +1,0 @@
----
-- name: Test Playbook
-  hosts: all
-
-  roles:
-    - common

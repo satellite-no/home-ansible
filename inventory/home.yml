@@ -26,6 +26,9 @@ all:
         sc4s:
           hosts:
             sc4s.mybeda.com:
+        saltminion:
+          hosts:
+            saltminion:
     debian:
       children:
         suricata:
